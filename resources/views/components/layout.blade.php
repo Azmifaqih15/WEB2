@@ -12,7 +12,8 @@
     
     {{ $slot }}
   </div>
-  <x-card></x-card>
+  <x-alert></x-alert>
+  
   
 
 
