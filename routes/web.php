@@ -3,42 +3,81 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-// Halaman Utama
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', function(){
+    $title = "Homepage";
+   
+    return view('web.homepage',['title'=>$title]);
+   });
+   Route::get('products', function(){
+    $title = "Products";
+    return view('web.products',['title'=>$title]);
+   });
+   Route::get('product/{slug}', function($slug){
+    $title = "Single Product";
+    return view('web.single_product',['title'=>$title,'slug'=>$slug]);
+   });
+   Route::get('categories', function(){
+    $title = "Categories";
+    return view('web.categories',['title'=>$title]);
+   });
+   Route::get('category/{slug}', function($slug){
+    $title = "Single Category";
+    return view('web.single_category',['title'=>$title,'slug'=>$slug]);
+   });
+   Route::get('cart', function(){
+    $title = "Cart";
+    return view('web.cart',['title'=>$title]);
+   });
+   Route::get('checkout', function(){
+    $title = "Checkout";
+    return view('web.checkout',['title'=>$title]);
+   });
 
-// Produk
-Route::get('/produk', function () {
-    return ('ini halaman produk');
-});
 
-Route::get('/produk/:id', function () {
-    return ('Detail produk dengan ID ');
-});
+// // Halaman Utama
+// Route::get('/', function () {
+//     return 'halaman home page';
+// });
 
-// Keranjang
-Route::get('/Cart', function () {
-    return ('Keranjang belanja pengguna');
-});
+// // Produk
+// Route::get('/produk', function () {
+//     return ('ini halaman produk');
+// });
 
-//Checkout & pembayaran
-Route::get('/Checkout', function () {
-    return ('Halaman Checkout dan pembayaran');
-});
+// Route::get('/produk/{slug}', function ($slug) {
+//     return 'halaman single produk -'.$slug;
+// });
 
-//pesanan
-Route::get('/Pesanan', function () {
-    return ('Dhasbord pesanan pengguna');
-});
+// // Keranjang
+// Route::get('/Cart', function () {
+//     return ('Keranjang belanja pengguna');
+// });
+// // Keranjang
+// Route::get('/Cart', function () {
+//     return ('Keranjang belanja pengguna');
+// });
+// // Keranjang
+// Route::get('/Cart', function () {
+//     return ('Keranjang belanja pengguna');
+// });
 
-// Admin 
-Route::get('/admin/dashboard', function () {
-    return ('Dashboard admin');
-});
-Route::get('/admin/products', function () {
-    return ('Kelola produk oleh admin');
-});
+// //Checkout & pembayaran
+// Route::get('/Checkout', function () {
+//     return ('Halaman Checkout dan pembayaran');
+// });
+
+// //pesanan
+// Route::get('/Pesanan', function () {
+//     return ('Dhasbord pesanan pengguna');
+// });
+
+// // Admin 
+// Route::get('/admin/dashboard', function () {
+//     return ('Dashboard admin');
+// });
+// Route::get('/admin/products', function () {
+//     return ('Kelola produk oleh admin');
+// });
 // Route::view('dashboard', 'dashboard')
 //     ->middleware(['auth', 'verified'])
 //     ->name('dashboard');
