@@ -1,3 +1,3 @@
 <x-layout>
-   <h3>Ini adalah menu categories OMMMMMMMM</h3>
+   <h3>Ini adalah menu categories </h3>
 </x-layout>
